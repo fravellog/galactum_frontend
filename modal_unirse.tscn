@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://ccje8vk2vqf2x"]
+
+[ext_resource type="Script" uid="uid://nri1vgipswio" path="res://modal_unirse.gd" id="1_7gp8i"]
+
+[node name="ModalUnirse" type="Control" unique_id=1980233]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7gp8i")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1223547355]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0.03529412, 0.5019608)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=660641174]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="CenterContainer" unique_id=2016063884]
+custom_minimum_size = Vector2(400, 459)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Panel" unique_id=1938257411]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Panel/MarginContainer" unique_id=883399900]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=1226158520]
+layout_mode = 2
+text = "🤝 Unirse a Striker Force"
+
+[node name="Label2" type="Label" parent="CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=1393130471]
+layout_mode = 2
+text = "📋 Requisito: Poder ≥ 500K"
+
+[node name="TextEdit" type="TextEdit" parent="CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=986834927]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=591857800]
+layout_mode = 2
+text = "☑️ Acepto las reglas de la alianza"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=1190132839]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1722838418]
+layout_mode = 2
+text = "❌ Cancelar"
+
+[node name="Button2" type="Button" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1709395769]
+layout_mode = 2
+text = "📩 Enviar solicitud"
+
+[connection signal="gui_input" from="ColorRect" to="." method="_on_color_rect_gui_input"]

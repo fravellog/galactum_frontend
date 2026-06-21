@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://8ak15ru1ftgx"]
+
+[ext_resource type="Script" uid="uid://ck7k55tnotfq4" path="res://modal_perfil_tripulante.gd" id="1_t4qu7"]
+
+[node name="ModalPerfilTripulante" type="Control" unique_id=1994697306]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t4qu7")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=174067443]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0.03529412, 0.5019608)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=500363981]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="CenterContainer" unique_id=2052875505]
+custom_minimum_size = Vector2(300, 350)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Panel" unique_id=338973984]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Panel/MarginContainer" unique_id=1265206898]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=468324446]
+layout_mode = 2
+text = "(avatar) 🧑‍🚀"
+
+[node name="Label2" type="Label" parent="CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=2102448396]
+layout_mode = 2
+text = "(nombre)"
+
+[node name="Label3" type="Label" parent="CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=2053689151]
+layout_mode = 2
+text = "(rango jugador)"
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=1859688569]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=223991446]
+layout_mode = 2
+text = "(estadisticas)"
+
+[node name="Label5" type="Label" parent="CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=1354287088]
+layout_mode = 2
+text = "(estado conexion)"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=496494383]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=118708385]
+layout_mode = 2
+text = "❌ Cerrar"
+
+[node name="Button2" type="Button" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=396520286]
+layout_mode = 2
+text = "➕ Añadir Amigo"
+
+[connection signal="gui_input" from="ColorRect" to="." method="_on_color_rect_gui_input"]
