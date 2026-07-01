@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://b33i66wvd1si4"]
+
+[ext_resource type="Script" uid="uid://dadbwsuj128g5" path="res://menu_busqueda.gd" id="1_7m3gx"]
+
+[node name="MenuBusqueda" type="Control" unique_id=434229301]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 53.0
+offset_right = 6.0
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7m3gx")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1287736137]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -55.0
+offset_right = -5.0
+offset_bottom = -55.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.034877975, 0.14217475, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=570508389]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -51.0
+offset_right = -2.0
+offset_bottom = -51.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1709190890]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer" unique_id=593882303]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1357136033]
+layout_mode = 2
+text = "Buscar "
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=324139266]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer2" unique_id=286051958]
+layout_mode = 2
+toggle_mode = true
+
+[node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer2" unique_id=930710119]
+layout_mode = 2
+toggle_mode = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer" unique_id=1224956803]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer" unique_id=1232939935]
+layout_mode = 2
+
+[node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=261858910]

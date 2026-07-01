@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bp4enxsyxbs7"]
+
+[ext_resource type="Script" uid="uid://b77cbqidi47r1" path="res://tarjeta_miembro.gd" id="1_xrg04"]
+
+[node name="TarjetaMiembro" type="PanelContainer" unique_id=2050744061]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+script = ExtResource("1_xrg04")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1553741427]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1361662320]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=390362881]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1232180900]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "👤 Jugador123"
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=453620365]
+layout_mode = 2
+text = "👑 Líder"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1426678239]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=684642433]
+layout_mode = 2
+text = "⚡ 850K | 🔢 42K | 💀 12.4K"
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1308569173]
+layout_mode = 2
+text = "🟢 Activo (hace 2h)"
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
