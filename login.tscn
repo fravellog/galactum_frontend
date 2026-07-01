@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dwql4tjr0s2hy"]
 
-[ext_resource type="Script" uid="uid://ciypfu8kbbcae" path="res://login.gd" id="1_cau7c"]
+[sub_resource type="GDScript" id="GDScript_tajqu"]
 
 [node name="Login" type="Control" unique_id=384160840]
 layout_mode = 3
@@ -9,7 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_cau7c")
+script = SubResource("GDScript_tajqu")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2135605393]
 layout_mode = 1

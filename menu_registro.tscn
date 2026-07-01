@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://cjinnm1mhpwsj"]
+
+[ext_resource type="Script" uid="uid://cusrq1du70fld" path="res://menu_registro.gd" id="1_4negb"]
+
+[node name="MenuRegistro" type="Control" unique_id=888548938]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4negb")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1999825064]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05882353, 0, 0.41960785, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1907657748]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer" unique_id=1172618617]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer" unique_id=1022395725]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer" unique_id=1025662564]
+layout_mode = 2
+
+[node name="Label_Titulo" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=619151612]
+layout_mode = 2
+text = "Galactum - Registrar Cuenta"
+
+[node name="LineEdit_Email" type="LineEdit" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1552474252]
+layout_mode = 2
+placeholder_text = "Email"
+
+[node name="LineEdit_Username" type="LineEdit" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=960489717]
+layout_mode = 2
+placeholder_text = "User"
+
+[node name="LineEdit_Password" type="LineEdit" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=515158636]
+layout_mode = 2
+placeholder_text = "Password"
+secret = true
+
+[node name="Button_Registro" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=858656171]
+layout_mode = 2
+text = "Crear Cuenta"
+
+[node name="Label_Pregunta" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=555176478]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "¿Tienes una cuenta creada?"
+
+[node name="Button_Volver" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1400315922]
+layout_mode = 2
+text = "Iniciar sesión"
+
+[node name="Label_Mensaje" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=260862440]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="CenterContainer" unique_id=1702545935]
+layout_mode = 2
+
+[node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=1959715102]

@@ -1,3 +1,0 @@
-extends control 
-
-func button 
