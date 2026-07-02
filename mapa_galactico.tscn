@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dcvnqtufp83ir" path="res://mapa_galactico.gd" id="1_hfey2"]
 [ext_resource type="Texture2D" uid="uid://cllcnwa4h4oe5" path="res://fondo_espacio.jpg" id="2_sh8q8"]
-[ext_resource type="Texture2D" uid="uid://dex6t8gygtjap" path="res://iconojugador.png" id="3_pf0yu"]
-[ext_resource type="Texture2D" uid="uid://djlvbs0g13fir" path="res://icon.svg" id="4_4ckfe"]
+[ext_resource type="Texture2D" uid="uid://dhel5dlk5kare" path="res://IconoJugador.webp" id="3_pf0yu"]
+[ext_resource type="Texture2D" uid="uid://5ye578hxgcp" path="res://IconoAlianza.png" id="4_pf0yu"]
 
 [node name="MapaGalactico" type="Control" unique_id=608878329]
 layout_mode = 3
@@ -75,21 +75,24 @@ offset_bottom = 40.0
 
 [node name="Icono_Jugador" type="TextureRect" parent="Area_Radar" unique_id=697684680]
 layout_mode = 1
-offset_left = 188.0
-offset_top = 158.0
-offset_right = 308.0
-offset_bottom = 274.0
+offset_left = 879.0
+offset_top = 103.0
+offset_right = 959.0
+offset_bottom = 184.0
 texture = ExtResource("3_pf0yu")
 expand_mode = 1
+stretch_mode = 6
 
 [node name="Icono_Alianza" type="TextureRect" parent="Area_Radar" unique_id=2135609976]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 867.0
-offset_top = 207.0
-offset_right = 995.0
-offset_bottom = 335.0
+offset_left = 274.0
+offset_top = 245.0
+offset_right = 473.0
+offset_bottom = 469.0
 grow_vertical = 0
-texture = ExtResource("4_4ckfe")
+texture = ExtResource("4_pf0yu")
+expand_mode = 1
+stretch_mode = 6
