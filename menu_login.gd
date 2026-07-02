@@ -35,18 +35,33 @@ func _on_btn_ingresar_pressed():
 		mostrar_error("Error crítico de conexión HTTP.")
 
 func _on_request_completed(result, response_code, headers, body):
-	btn_ingresar.disabled = false # Desbloqueamos el botón
+	btn_ingresar.disabled = false 
 	
 	if response_code == 200:
 		var json_respuesta = JSON.parse_string(body.get_string_from_utf8())
-		
-		# ¡Éxito! Guardamos el token en nuestro APIManager global
 		APIManager.token_jwt = json_respuesta["access_token"]
 		
-		# Cambiamos de escena al menú de búsqueda de alianzas
+		# Si el backend real nos envía datos del usuario, los guardaríamos aquí.
+		# Por ahora, pasamos a la siguiente pantalla:
 		get_tree().change_scene_to_file("res://menu_busqueda.tscn")
+		
+	elif response_code == 0:
+		# TRUCO FRONTEND: Servidor apagado, simulamos inicio de sesión
+		label_mensaje.modulate = Color.GREEN
+		label_mensaje.text = "Modo Offline: Sesión simulada iniciada."
+		
+		# Guardamos los datos falsos usando lo que el jugador escribió en el LineEdit
+		APIManager.usuario_actual = {
+			"nombre": input_usuario.text.get_slice("@", 0), # Corta el texto antes del '@' para usarlo de nombre
+			"rango": "Comandante Novato",
+			"poder": 350000,
+			"estado": "🟢 Online"
+		}
+		
+		await get_tree().create_timer(1.0).timeout # Pequeña pausa dramática
+		get_tree().change_scene_to_file("res://menu_busqueda.tscn")
+		
 	else:
-		# Si el backend rechaza las credenciales (ej. código 401)
 		mostrar_error("Usuario o contraseña incorrectos.")
 
 func mostrar_error(mensaje: String):

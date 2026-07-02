@@ -40,6 +40,28 @@ offset_bottom = -51.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Header" type="MarginContainer" parent="VBoxContainer" unique_id=741989706]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Header" unique_id=436199060]
+layout_mode = 2
+
+[node name="Label_Saludo" type="Label" parent="VBoxContainer/Header/HBoxContainer" unique_id=1615190887]
+layout_mode = 2
+text = "Cargando perfil..."
+
+[node name="Control" type="Control" parent="VBoxContainer/Header/HBoxContainer" unique_id=356554042]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button_Salir" type="Button" parent="VBoxContainer/Header/HBoxContainer" unique_id=1835475153]
+layout_mode = 2
+text = "🚪 Cerrar Sesión"
+
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1709190890]
 layout_mode = 2
 
