@@ -1,6 +1,7 @@
 extends Control
 
 var TarjetaAlianzaEscena = preload("res://tarjeta_alianza.tscn")
+var MapaGalacticoEscena = preload("res://mapa_galactico.tscn")
 
 @onready var input_busqueda = $VBoxContainer/HBoxContainer/LineEdit
 @onready var btn_buscar = $VBoxContainer/HBoxContainer/Button
@@ -8,12 +9,13 @@ var TarjetaAlianzaEscena = preload("res://tarjeta_alianza.tscn")
 @onready var contenedor_lista = $VBoxContainer/ScrollContainer/VBoxContainer
 @onready var label_saludo = $VBoxContainer/Header/HBoxContainer/Label_Saludo
 @onready var button_salir = $VBoxContainer/Header/HBoxContainer/Button_Salir
+@onready var btn_mapa = $VBoxContainer/Header/HBoxContainer/Button_Mapa
 # 1. NUEVA VARIABLE: Guardará lo que el usuario escribió para usarlo cuando el servidor responda (o falle).
 var ultima_busqueda: String = ""
-
 func _ready():
 	btn_buscar.pressed.connect(_on_btn_buscar_pressed)
 	http_request.request_completed.connect(_on_request_completed)
+	btn_mapa.pressed.connect(_on_btn_mapa_pressed)
 	
 	# Conectamos el botón de cerrar sesión
 	button_salir.pressed.connect(_on_btn_salir_pressed)
@@ -35,7 +37,7 @@ func _on_btn_buscar_pressed():
 	for hijo in contenedor_lista.get_children():
 		hijo.queue_free()
 	
-	var url = APIManager.base_url + "/api/v1/alianzas/buscar?nombre=" + ultima_busqueda
+	var url = APIManager.base_url + "/api/v1/alianzas/buscar?search=" + ultima_busqueda
 	var headers = APIManager.get_auth_headers()
 	var error = http_request.request(url, headers, HTTPClient.METHOD_GET)
 	
@@ -82,3 +84,8 @@ func _on_btn_salir_pressed():
 	
 	# Lo devolvemos a la pantalla de login
 	get_tree().change_scene_to_file("res://menu_login.tscn")
+
+func _on_btn_mapa_pressed():
+	var nuevo_mapa = MapaGalacticoEscena.instantiate()
+	# Lo añadimos a la escena actual para que aparezca por encima
+	get_tree().current_scene.add_child(nuevo_mapa)

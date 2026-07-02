@@ -33,7 +33,6 @@ func _on_btn_ingresar_pressed():
 	var error = http_request.request(url, headers, HTTPClient.METHOD_POST, json_enviar)
 	if error != OK:
 		mostrar_error("Error crítico de conexión HTTP.")
-
 func _on_request_completed(result, response_code, headers, body):
 	btn_ingresar.disabled = false 
 	
@@ -41,11 +40,19 @@ func _on_request_completed(result, response_code, headers, body):
 		var json_respuesta = JSON.parse_string(body.get_string_from_utf8())
 		APIManager.token_jwt = json_respuesta["access_token"]
 		
-		# Si el backend real nos envía datos del usuario, los guardaríamos aquí.
-		# Por ahora, pasamos a la siguiente pantalla:
+		# ¡EL ARREGLO! Rellenamos los datos del usuario también en modo online
+		# (Como el login de FastAPI no suele devolver el nombre, lo sacamos del input)
+		APIManager.usuario_actual = {
+			"nombre": input_usuario.text.get_slice("@", 0), 
+			"rango": "Comandante Recluta",
+			"poder": 5000, # Aquí aplicamos tu genial idea del "Poder Base"
+			"estado": "🟢 Online"
+		}
+		
 		get_tree().change_scene_to_file("res://menu_busqueda.tscn")
 		
 	elif response_code == 0:
+
 		# TRUCO FRONTEND: Servidor apagado, simulamos inicio de sesión
 		label_mensaje.modulate = Color.GREEN
 		label_mensaje.text = "Modo Offline: Sesión simulada iniciada."

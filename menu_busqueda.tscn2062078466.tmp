@@ -64,7 +64,6 @@ text = "🚪 Cerrar Sesión"
 
 [node name="Button_Mapa" type="Button" parent="VBoxContainer/Header/HBoxContainer" unique_id=1799487616]
 layout_mode = 2
-text = "Ver Mapa"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1709190890]
 layout_mode = 2
