@@ -11,15 +11,7 @@ config_version=5
 [application]
 
 config/name="galactum_frontend"
-<<<<<<< HEAD
-run/main_scene="uid://b33i66wvd1si4"
-=======
-<<<<<<< HEAD
 run/main_scene="uid://6cud1x4ijcin"
-=======
-run/main_scene="uid://b33i66wvd1si4"
->>>>>>> origin/main
->>>>>>> 6f0cf26 (Creacion de login y registro)
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
