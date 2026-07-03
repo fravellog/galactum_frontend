@@ -7,10 +7,6 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 6.0
-offset_top = 53.0
-offset_right = 6.0
-offset_bottom = 53.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7m3gx")
@@ -20,10 +16,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -5.0
-offset_top = -55.0
-offset_right = -5.0
-offset_bottom = -55.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.034877975, 0.14217475, 1)
@@ -33,10 +25,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -2.0
-offset_top = -51.0
-offset_right = -2.0
-offset_bottom = -51.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -66,15 +54,32 @@ text = "🚪 Cerrar Sesión"
 layout_mode = 2
 text = "Ver Mapa"
 
+[node name="Button_Tripulacion" type="Button" parent="VBoxContainer/Header/HBoxContainer" unique_id=440397285]
+layout_mode = 2
+text = "Mi tripulación "
+
+[node name="Button_MiAlianza" type="Button" parent="VBoxContainer/Header/HBoxContainer" unique_id=1444297424]
+layout_mode = 2
+text = "Mi Alianza"
+
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1709190890]
 layout_mode = 2
 
 [node name="LineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer" unique_id=593882303]
 layout_mode = 2
+size_flags_horizontal = 0
+offset_transform_enabled = true
+localize_numeral_system = false
+placeholder_text = "Nombre de alianza"
 
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1357136033]
+[node name="Button_Buscar" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1357136033]
 layout_mode = 2
+size_flags_horizontal = 0
 text = "Buscar "
+
+[node name="Button_Fundar" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1356850612]
+layout_mode = 2
+text = "Fundar Alianza"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=324139266]
 layout_mode = 2
@@ -86,6 +91,9 @@ toggle_mode = true
 [node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer2" unique_id=930710119]
 layout_mode = 2
 toggle_mode = true
+
+[node name="Label_Estado" type="Label" parent="VBoxContainer" unique_id=1886989735]
+layout_mode = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer" unique_id=1224956803]
 layout_mode = 2

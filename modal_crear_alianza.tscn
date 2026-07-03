@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://quwj0k56jnbf"]
+
+[ext_resource type="Script" uid="uid://dfis6dfdb5xqv" path="res://modal_crear_alianza.gd" id="1_7p01c"]
+
+[node name="ModalCrearAlianza" type="Control" unique_id=1633405603]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7p01c")
+
+[node name="FondoOscuro" type="ColorRect" parent="." unique_id=1924462799]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.4745098)
+
+[node name="PanelCentral" type="PanelContainer" parent="." unique_id=517911747]
+custom_minimum_size = Vector2(400, 520)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -260.0
+offset_right = 200.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelCentral" unique_id=974494025]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelCentral/MarginContainer" unique_id=2002074115]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Label_Titulo" type="Label" parent="PanelCentral/MarginContainer/VBoxContainer" unique_id=995200792]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "🛡️ Fundar nueva alianza"
+
+[node name="Label_Nombre" type="Label" parent="PanelCentral/MarginContainer/VBoxContainer" unique_id=2117050919]
+layout_mode = 2
+text = "Nombre de la alianza"
+
+[node name="LineEdit_Nombre" type="LineEdit" parent="PanelCentral/MarginContainer/VBoxContainer" unique_id=334456361]
+layout_mode = 2
+placeholder_text = "Ej.: Guardianes de Orión"
+
+[node name="Label_Region" type="Label" parent="PanelCentral/MarginContainer/VBoxContainer" unique_id=508405314]
+layout_mode = 2
+text = "TAG de la alianza"
+
+[node name="LineEdit_Region" type="LineEdit" parent="PanelCentral/MarginContainer/VBoxContainer" unique_id=919344357]
+layout_mode = 2
+placeholder_text = "Ej.: ORION"
+
+[node name="Label_RequisitoPoder" type="Label" parent="PanelCentral/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Poder mínimo para solicitar ingreso"
+
+[node name="LineEdit_RequisitoPoder" type="LineEdit" parent="PanelCentral/MarginContainer/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "0"
+virtual_keyboard_type = 2
+
+[node name="Label_Estado" type="Label" parent="PanelCentral/MarginContainer/VBoxContainer"]
+layout_mode = 2
+autowrap_mode = 2
+text = ""
+
+[node name="HBoxContainer_Botones" type="HBoxContainer" parent="PanelCentral/MarginContainer/VBoxContainer" unique_id=1689810613]
+layout_mode = 2
+alignment = 2
+
+[node name="Button_Cancelar" type="Button" parent="PanelCentral/MarginContainer/VBoxContainer/HBoxContainer_Botones" unique_id=362783834]
+layout_mode = 2
+text = "Cancelar"
+
+[node name="Button_Confirmar" type="Button" parent="PanelCentral/MarginContainer/VBoxContainer/HBoxContainer_Botones" unique_id=1847034294]
+layout_mode = 2
+text = "Confirmar"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=312572990]

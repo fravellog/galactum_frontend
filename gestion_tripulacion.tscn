@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dhit866pucbmr"]
 
 [ext_resource type="Texture2D" uid="uid://cmjsn36jedqpr" path="res://FondoPanel.jpg" id="1_aq6de"]
+[ext_resource type="Script" uid="uid://i2opydt3gqur" path="res://gestion_tripulacion.gd" id="1_uvewm"]
 
 [node name="GestionTripulacion" type="Control" unique_id=1436736234]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_uvewm")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=33363145]
 layout_mode = 1
@@ -21,25 +23,19 @@ texture = ExtResource("1_aq6de")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1419680375]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Button_Volver" type="Button" parent="MarginContainer" unique_id=852171925]
-layout_mode = 2
-text = "⬅️ Volver a la Nave"
-
 [node name="HBoxContainer_Principal" type="HBoxContainer" parent="." unique_id=1010067430]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 45.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 50
 
 [node name="Panel_Lista" type="PanelContainer" parent="HBoxContainer_Principal" unique_id=1526861160]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -51,10 +47,12 @@ layout_mode = 2
 columns = 3
 
 [node name="Panel_Detalles" type="PanelContainer" parent="HBoxContainer_Principal" unique_id=22372517]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer_Principal/Panel_Detalles" unique_id=645260009]
+custom_minimum_size = Vector2(3, 0)
 layout_mode = 2
 
 [node name="Foto_Personaje" type="TextureRect" parent="HBoxContainer_Principal/Panel_Detalles/VBoxContainer" unique_id=8730376]
@@ -67,6 +65,7 @@ text = "Comandante Kael"
 [node name="Label_Lore" type="Label" parent="HBoxContainer_Principal/Panel_Detalles/VBoxContainer" unique_id=731971639]
 layout_mode = 2
 text = "Experto en tácticas de combate."
+autowrap_mode = 2
 
 [node name="HSeparator" type="HSeparator" parent="HBoxContainer_Principal/Panel_Detalles/VBoxContainer" unique_id=2136050194]
 layout_mode = 2
@@ -86,3 +85,12 @@ text = "🔮 Magia: 5"
 [node name="Button_Modificar" type="Button" parent="HBoxContainer_Principal/Panel_Detalles/VBoxContainer" unique_id=194112469]
 layout_mode = 2
 text = "⬆️ Modificar (Subir de Nivel)"
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1419680375]
+layout_mode = 1
+offset_right = 159.0
+offset_bottom = 40.0
+
+[node name="Button_Volver" type="Button" parent="MarginContainer" unique_id=852171925]
+layout_mode = 2
+text = "⬅️ Volver a la Nave"

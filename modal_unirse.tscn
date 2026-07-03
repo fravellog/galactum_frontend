@@ -30,7 +30,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="Panel" type="Panel" parent="CenterContainer" unique_id=2016063884]
-custom_minimum_size = Vector2(400, 459)
+custom_minimum_size = Vector2(400, 500)
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Panel" unique_id=1938257411]
@@ -45,32 +45,42 @@ theme_override_constants/margin_bottom = 20
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Panel/MarginContainer" unique_id=883399900]
 layout_mode = 2
+theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=1226158520]
+[node name="Label_Titulo" type="Label" parent="CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=1226158520]
 layout_mode = 2
-text = "🤝 Unirse a Striker Force"
+text = "🤝 Solicitud de ingreso"
 
 [node name="Label2" type="Label" parent="CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=1393130471]
 layout_mode = 2
-text = "📋 Requisito: Poder ≥ 500K"
+text = "Poder requerido"
 
-[node name="TextEdit" type="TextEdit" parent="CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=986834927]
+[node name="TextEdit_Mensaje" type="TextEdit" parent="CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=986834927]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
+placeholder_text = "Mensaje opcional para el líder"
 
-[node name="CheckBox" type="CheckBox" parent="CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=591857800]
+[node name="CheckBox_Reglas" type="CheckBox" parent="CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=591857800]
 layout_mode = 2
-text = "☑️ Acepto las reglas de la alianza"
+text = "Acepto las reglas de la alianza"
+
+[node name="Label_Estado" type="Label" parent="CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=1212075963]
+layout_mode = 2
+horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=1190132839]
 layout_mode = 2
+alignment = 2
 
-[node name="Button" type="Button" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1722838418]
+[node name="Button_Enviar" type="Button" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1722838418]
 layout_mode = 2
-text = "❌ Cancelar"
+text = "Cancelar"
 
-[node name="Button2" type="Button" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1709395769]
+[node name="Button_Cancelar" type="Button" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1709395769]
 layout_mode = 2
 text = "📩 Enviar solicitud"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=1173868994]
 
 [connection signal="gui_input" from="ColorRect" to="." method="_on_color_rect_gui_input"]

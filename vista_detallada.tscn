@@ -45,7 +45,7 @@ text = "⬅️ Volver"
 [node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer" unique_id=260767959]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "🛡️ Striker Force Lv. 12"
+text = "🛡️ Cargando alianza..."
 
 [node name="Button" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer" unique_id=1086118418]
 layout_mode = 2
@@ -54,18 +54,18 @@ text = "📩 Solicitar"
 [node name="TabContainer" type="TabContainer" parent="VBoxContainer" unique_id=1899852300]
 layout_mode = 2
 size_flags_vertical = 3
-current_tab = 1
+current_tab = 0
 
 [node name="Info" type="MarginContainer" parent="VBoxContainer/TabContainer" unique_id=1233753785]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
 [node name="Label" type="Label" parent="VBoxContainer/TabContainer/Info" unique_id=1540980296]
 layout_mode = 2
-text = "Prueba de texto"
+text = "Cargando información..."
 
 [node name="Miembros" type="MarginContainer" parent="VBoxContainer/TabContainer" unique_id=716785580]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
