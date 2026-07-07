@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://1qgog0x6ltfj"]
+
+[ext_resource type="Script" uid="uid://cigw52p3ob3gi" path="res://tarjeta_recurso.gd" id="1_xmscg"]
+
+[node name="TarjetaRecurso" type="PanelContainer" unique_id=1997536712]
+custom_minimum_size = Vector2(0, 125)
+offset_right = 132.0
+offset_bottom = 202.0
+script = ExtResource("1_xmscg")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=489624841]
+layout_mode = 2
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 14
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2052811858]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="HBoxContainer_Cabecera" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=67932914]
+layout_mode = 2
+
+[node name="Label_Icono" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer_Cabecera" unique_id=1746063610]
+layout_mode = 2
+text = "◆"
+
+[node name="Label_Recurso" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer_Cabecera" unique_id=1636519834]
+layout_mode = 2
+theme_override_font_sizes/font_size = 17
+text = "RECURSO"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=446588514]
+layout_mode = 2
+
+[node name="Label_Cantidad" type="Label" parent="MarginContainer/VBoxContainer" unique_id=670141144]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "0"
+
+[node name="Label_Unidad" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1244722332]
+layout_mode = 2
+text = "unidades"
+
+[node name="Label_Descripcion" type="Label" parent="MarginContainer/VBoxContainer" unique_id=2082844134]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "Material almacenado en la bodega."
+autowrap_mode = 3

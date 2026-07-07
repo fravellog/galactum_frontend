@@ -91,9 +91,8 @@ func _procesar_verify(response_code: int, response_text: String):
 		"poder": int(profile.get("player_power", 0)),
 		"alliance_id": profile.get("alliance_id", null),
 	}
-
-	get_tree().change_scene_to_file("res://menu_busqueda.tscn")
-
+	
+	get_tree().change_scene_to_file("res://centro_mando.tscn")
 
 func mostrar_error(mensaje: String):
 	label_mensaje.text = mensaje
