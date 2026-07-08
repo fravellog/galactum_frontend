@@ -6,6 +6,7 @@ var GestionTripulacionEscena = preload("res://gestion_tripulacion.tscn")
 var ModalCrearEscena = preload("res://modal_crear_alianza.tscn")
 var VistaDetalladaEscena = preload("res://vista_detallada.tscn")
 
+
 @onready var input_busqueda = $VBoxContainer/HBoxContainer/LineEdit
 @onready var btn_buscar = $VBoxContainer/HBoxContainer/Button_Buscar
 @onready var btn_fundar = $VBoxContainer/HBoxContainer/Button_Fundar
@@ -21,13 +22,15 @@ var VistaDetalladaEscena = preload("res://vista_detallada.tscn")
 @onready var http_request = $HTTPRequest
 @onready var contenedor_lista = $VBoxContainer/ScrollContainer/VBoxContainer
 
+@onready var btn_centro_mando = $VBoxContainer/Header/HBoxContainer/Button_CentroMando
+
 var tipo_solicitud: String = ""
 
 
 func _ready():
 	btn_buscar.pressed.connect(_on_btn_buscar_pressed)
 	btn_fundar.pressed.connect(_on_btn_crear_alianza_pressed)
-
+	btn_centro_mando.pressed.connect(_on_btn_centro_mando_pressed)
 	btn_mi_alianza.pressed.connect(_on_btn_mi_alianza_pressed)
 	btn_mapa.pressed.connect(_on_btn_mapa_pressed)
 	btn_tripulacion.pressed.connect(_on_btn_tripulacion_pressed)
@@ -250,3 +253,6 @@ func _convertir_a_entero(valor, valor_por_defecto: int = 0) -> int:
 			return texto.to_int()
 
 	return valor_por_defecto
+
+func _on_btn_centro_mando_pressed() -> void:
+	get_tree().change_scene_to_file("res://centro_mando.tscn")

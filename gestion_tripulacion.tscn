@@ -44,6 +44,8 @@ layout_mode = 2
 
 [node name="GridContainer_Personajes" type="GridContainer" parent="HBoxContainer_Principal/Panel_Lista/ScrollContainer" unique_id=481663728]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 columns = 3
 
 [node name="Panel_Detalles" type="PanelContainer" parent="HBoxContainer_Principal" unique_id=22372517]
@@ -72,7 +74,6 @@ layout_mode = 2
 
 [node name="GridContainer_Stats" type="GridContainer" parent="HBoxContainer_Principal/Panel_Detalles/VBoxContainer" unique_id=1592495190]
 layout_mode = 2
-columns = 2
 
 [node name="Label" type="Label" parent="HBoxContainer_Principal/Panel_Detalles/VBoxContainer/GridContainer_Stats" unique_id=926167550]
 layout_mode = 2
@@ -88,9 +89,18 @@ text = "⬆️ Modificar (Subir de Nivel)"
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1419680375]
 layout_mode = 1
-offset_right = 159.0
+offset_right = 332.0
 offset_bottom = 40.0
 
-[node name="Button_Volver" type="Button" parent="MarginContainer" unique_id=852171925]
+[node name="HBoxContainer_Navegacion" type="HBoxContainer" parent="MarginContainer" unique_id=963243984]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Button_CentroMando" type="Button" parent="MarginContainer/HBoxContainer_Navegacion" unique_id=867624758]
+layout_mode = 2
+text = "← Centro de mando
+"
+
+[node name="Button_Volver" type="Button" parent="MarginContainer/HBoxContainer_Navegacion" unique_id=852171925]
 layout_mode = 2
 text = "⬅️ Volver a la Nave"

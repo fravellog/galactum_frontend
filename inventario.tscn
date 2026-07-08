@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene format=3 uid="uid://byv2pej67rvsq"]
 
-[ext_resource type="Script" path="res://inventario.gd" id="1_inventory"]
+[ext_resource type="Script" uid="uid://cualne5qp2ug3" path="res://inventario.gd" id="1_inventory"]
 
-[node name="Inventario" type="Control"]
+[node name="Inventario" type="Control" unique_id=489599860]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

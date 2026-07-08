@@ -46,6 +46,10 @@ text = "Cargando perfil..."
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="Button_CentroMando" type="Button" parent="VBoxContainer/Header/HBoxContainer" unique_id=1273824219]
+layout_mode = 2
+text = "← Centro de mando"
+
 [node name="Button_Salir" type="Button" parent="VBoxContainer/Header/HBoxContainer" unique_id=1835475153]
 layout_mode = 2
 text = "🚪 Cerrar Sesión"
