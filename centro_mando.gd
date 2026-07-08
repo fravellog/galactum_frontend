@@ -59,7 +59,7 @@ func _ready() -> void:
 	_add_module(grid, "MINERÍA", "Asteroides y extracción", "res://mineria.tscn")
 	_add_module(grid, "CONFLICTOS", "Operaciones de combate", "res://conflictos.tscn")
 	_add_module(grid, "FABRICACIÓN", "Mejoras de nave y recursos", "res://fabricacion.tscn")
-	_add_module(grid, "TORNEOS", "Módulo planificado", "", true)
+	_add_module(grid, "BITÁCORA", "Historial y eventos del comandante", "res://bitacora.tscn")
 
 	var btn_exit: Button = make_button("Cerrar sesión", COLOR_DANGER)
 	btn_exit.custom_minimum_size.y = 36

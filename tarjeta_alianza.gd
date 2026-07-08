@@ -19,23 +19,34 @@ func _ready():
 	btn_solicitar.pressed.connect(_on_btn_solicitar_pressed)
 
 
-func configurar_tarjeta(datos_alianza: Dictionary):
-	id_alianza = int(datos_alianza.get("id", 0))
+func configurar_tarjeta(datos_alianza: Dictionary) -> void:
+	id_alianza = _to_int(datos_alianza.get("id", 0), 0)
 	nombre_alianza = str(datos_alianza.get("nombre", "Alianza sin nombre"))
-	requisito_poder = int(datos_alianza.get("req_poder", 0))
+	requisito_poder = _to_int(datos_alianza.get("req_poder", 0), 0)
 
-	var nivel = int(datos_alianza.get("nivel", 1))
-	var miembros_actuales = int(datos_alianza.get("miembros_actuales", 0))
-	var miembros_maximos = int(datos_alianza.get("miembros_maximos", 0))
-	var poder_total = str(datos_alianza.get("poder_total", "0"))
-	var region = str(datos_alianza.get("region", "ES"))
-	var poder_jugador = int(APIManager.usuario_actual.get("poder", 0))
+	var nivel: int = _to_int(datos_alianza.get("nivel", 1), 1)
+	var miembros_actuales: int = _to_int(datos_alianza.get("miembros_actuales", 0), 0)
+	var miembros_maximos: int = _to_int(datos_alianza.get("miembros_maximos", 0), 0)
+	var poder_total: String = str(datos_alianza.get("poder_total", "0"))
+	var region: String = str(datos_alianza.get("region", "ES"))
+	var poder_jugador: int = _to_int(APIManager.usuario_actual.get("poder", 0), 0)
+
+	var lider_jugador_id: int = _to_int(datos_alianza.get("lider_jugador_id", null), 0)
+	var alliance_id_usuario: int = _to_int(APIManager.usuario_actual.get("alliance_id", 0), 0)
+
+	var usuario_tiene_alianza: bool = alliance_id_usuario > 0
 
 	label_titulo.text = "🛡️ " + nombre_alianza + " Lv. " + str(nivel)
 	label_stats.text = "👥 " + str(miembros_actuales) + "/" + str(miembros_maximos) + "  ⚡ " + poder_total + "  🌍 " + region
 	label_requisitos.text = "📋 Requisito: Poder ≥ " + str(requisito_poder)
 
-	if poder_jugador < requisito_poder:
+	if usuario_tiene_alianza:
+		btn_solicitar.disabled = true
+		btn_solicitar.text = "Ya tienes alianza"
+	elif lider_jugador_id <= 0:
+		btn_solicitar.disabled = true
+		btn_solicitar.text = "Sin líder"
+	elif poder_jugador < requisito_poder:
 		btn_solicitar.disabled = true
 		btn_solicitar.text = "Poder insuficiente"
 	elif miembros_actuales >= miembros_maximos:
@@ -44,7 +55,6 @@ func configurar_tarjeta(datos_alianza: Dictionary):
 	else:
 		btn_solicitar.disabled = false
 		btn_solicitar.text = "📩 Solicitar"
-
 func _on_btn_solicitar_pressed():
 	var nuevo_modal = ModalUnirseEscena.instantiate()
 
@@ -62,3 +72,21 @@ func _on_btn_ver_pressed():
 	var nueva_vista = VistaDetalladaEscena.instantiate()
 	get_tree().current_scene.add_child(nueva_vista)
 	nueva_vista.configurar_vista(id_alianza, nombre_alianza, requisito_poder)
+	
+func _to_int(value: Variant, fallback: int = 0) -> int:
+	if value == null:
+		return fallback
+
+	if typeof(value) == TYPE_INT:
+		return int(value)
+
+	if typeof(value) == TYPE_FLOAT:
+		return int(value)
+
+	if typeof(value) == TYPE_STRING:
+		var texto: String = str(value).strip_edges()
+
+		if texto.is_valid_int():
+			return texto.to_int()
+
+	return fallback

@@ -58,19 +58,42 @@ func _on_btn_confirmar_pressed():
 		label_estado.text = "No fue posible iniciar la conexión."
 
 
-func _on_request_completed(_result, response_code, _headers, body):
-	var response_text = body.get_string_from_utf8()
+func _on_request_completed(
+	_result: int,
+	response_code: int,
+	_headers: PackedStringArray,
+	body: PackedByteArray
+) -> void:
+	var response_text: String = body.get_string_from_utf8()
 
 	if response_code == 201:
 		label_estado.text = "Alianza creada. Eres su líder."
+
 		await get_tree().create_timer(1.2).timeout
+
 		queue_free()
 		return
 
 	btn_confirmar.disabled = false
 	btn_confirmar.text = "Confirmar"
-	var response = JSON.parse_string(response_text)
-	if typeof(response) == TYPE_DICTIONARY and response.has("detail"):
-		label_estado.text = str(response["detail"])
-	else:
-		label_estado.text = "Error al crear alianza. Código: " + str(response_code)
+
+	var mensaje_error: String = _extraer_error_backend(response_text, response_code)
+
+	label_estado.text = mensaje_error
+
+func _extraer_error_backend(response_text: String, response_code: int) -> String:
+	if response_text.strip_edges().is_empty():
+		return "Error al crear alianza. Código: " + str(response_code)
+
+	var parsed: Variant = JSON.parse_string(response_text)
+
+	if typeof(parsed) == TYPE_DICTIONARY:
+		var response: Dictionary = parsed as Dictionary
+
+		if response.has("detail"):
+			return str(response["detail"])
+
+		if response.has("mensaje"):
+			return str(response["mensaje"])
+
+	return "Error al crear alianza. Código: " + str(response_code) + " | " + response_text
